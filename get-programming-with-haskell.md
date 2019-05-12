@@ -66,3 +66,35 @@ data Name = Name FirstName LastName
 -- here Name is the DATA_CONSTRUCTOR and there are two args: FirstName and LastName
 
 ```
+
+#### Lesson 13: Type classes
+
+- Type classes are a way to group together types that behave in the same way. They make it easy to define one function to a wide variety of types.
+- `:t` or `:type` in GHCi can be used to inspect the type of a function in the wild.
+- `:info` can be used in GHCi to get information about types and type classes.
+- `Num a` can be understood as "there is a type a of class Num". `Num` is a type class generalising the idea of a number. All things of class `Num` must have for instance a function `(+)` defined on them.
+- Type classes allow us to define functions on an abstraction. For example, suppose we define a function `addThenDouble` on the `Num` type class. This would mean that this function will be valid for any function which implements the `Num` type class. In a way, Type classes allow us to define functions to work on an abstraction.
+- Syntax for defining a type class:
+
+```haskell
+
+class TypeName a where
+  fun1 :: a -> a
+  fun2 :: a -> String
+  fun3 :: a -> a -> Bool
+```
+
+- Four common type classes in Haskell are `Ord`, `Eq`, `Bounded`, and `Show`.
+- Types that implement the `Show` type class can be printed out in GHCi. This is why at times we get the error "No instance for (Show Something) arising from a use of 'print'". Without implementing `Show`, Haskell has no idea how to turn data constructors into strings.
+
+#### Lesson 14: Using type classes
+
+- Like in OO, functions in the context of type classes are called "methods" in Haskell.
+- `Polymorphism` means that the same function behaving differently depending on the type of data it’s working with.
+- Suppose we want to implement `Eq` class. The `Eq` class has two methods `(==)` and `(/=)`. Haskell is smart enough to figure out the implementation for either of these methods if _at least_ one of them is defined. This is done using Haskell's _default implementations_ of methods.
+- Each type class has a "minimum complete definition" which can help programmers determine what minimum methods need to be defined while implementing a type class. The minimum complete definitions that can be looked at on [Hackage](https://hackage.haskell.org). A good way to search Hackage is [Hoogle](www.haskell.org/hoogle).
+- The `Enum` class in Haskell helps us represent types as constants in turn helping us enumerate types.
+- In general, if you don’t have a good reason to implement your own, deriving is not only easier, but also often better.
+- Pending: Note about `newtype`
+
+#### Lesson 15: Capstone: Secret messages!
