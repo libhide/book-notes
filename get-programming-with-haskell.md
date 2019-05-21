@@ -97,4 +97,17 @@ class TypeName a where
 - In general, if you don’t have a good reason to implement your own, deriving is not only easier, but also often better.
 - Pending: Note about `newtype`
 
-#### Lesson 15: Capstone: Secret messages!
+### Unit 3: Programming in types
+
+#### Lesson 16. Creating types with "and" and "or"
+
+- Haskell has the concept of Algebraic data types which are types that are created by combining other types.
+- Types can be combined in two ways: using "and" OR "or. For example, a `Name` is a String `and` another String and `Bool` which is a `True` data constructor `or` a `False` data constructor.
+- Types combined with `and` are called _product types_ and those combined with `or` are called `sum types`.
+- Most programming languages allow programmers to create _product types_. The C programming language even has the concept of a `struct` available to create product types.
+- The problem with having _only_ product types available to a programmer is that it take software design in a particular direction – top-down design ie. starting with the most abstract representation of a type you can imagine.
+- Haskell offers a second way to combine types: Sum types. Sum types are a powerful tool that allows you to be much more expressive in defining new types. Some examples of Sum types in Haskell:
+  - A die is either a 6-sided die or a 20-sided die or...
+  - A paper is authored by either a person (`String`) or a group of people (`[String]`).
+  - A list is either an empty list (`[]`) or an item consed with another list (`a:[a]`).
+  - The most straightforward sum type is `Bool`.
