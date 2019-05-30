@@ -99,7 +99,7 @@ class TypeName a where
 
 ### Unit 3: Programming in types
 
-#### Lesson 16. Creating types with "and" and "or"
+#### Lesson 16: Creating types with "and" and "or"
 
 - Haskell has the concept of Algebraic data types which are types that are created by combining other types.
 - Types can be combined in two ways: using "and" OR "or. For example, a `Name` is a String `and` another String and `Bool` which is a `True` data constructor `or` a `False` data constructor.
@@ -111,3 +111,21 @@ class TypeName a where
   - A paper is authored by either a person (`String`) or a group of people (`[String]`).
   - A list is either an empty list (`[]`) or an item consed with another list (`a:[a]`).
   - The most straightforward sum type is `Bool`.
+
+#### Lesson 17: Design by composition – Semigroups and Monoids
+
+#### Lesson 18: Parameterized types
+
+- Parameterized types are types that take one or more arguments (like generics in most OOP languages).
+- A basic example of a parameterized type is `Triple` which is a type with three values that are the same. `Triple` _isn't_ like a 3-tuple `(a, b, c)`. In a `Triple`, all three values must be of the same type.
+
+```haskell
+
+data Triple a = Triple a a a deriving Show
+
+```
+
+- The type of a type is its _kind_.
+- Parameterized types can take any number of types as arguments. The number of types that a parameterized type takes as arguments defines its _kind_.
+- `List` is the most common parameterized type.
+- `Map` is an example of a parameterized type that takes two arguments: one for the type of its keys and another for the type of its values.
