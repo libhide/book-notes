@@ -86,3 +86,84 @@ while (i < 7) { i++; }
 - Using "If" in JSX can be achieved using the ternary operator.
 - Component names in React *must* start with capital letters. This is because lowercased tag names in React are reserved for built-in HTML and SVG elements like `div`, `ul`, `rect` etc.
 - JSX requires every element be closed. So: `return <br/>;` not `return <br>;`.
+
+### Chatper 5: Example: Tweet Component
+
+- When you're starting, it's a good idea to "draw" the component you want to build. It really helps you know when you're "done". A simple sketch gives you a target to aim for.
+- _What_ should you make a component?
+
+  1. Things that _change_ are good candidates for a component
+  2. Every _thing_ can also be made as a component
+
+### Chapter 6: Props
+
+- Where HTML elements have “attributes,” React components have “props” (short for "properties").
+- In JSX, every component can be self-closing. The convention is to self-close everything that does not have a child.
+- JSX uses `className` instead of `class` to specify CSS classes.
+- Since JSX gets transpiled to JS, props become keys and values in an object.
+
+```javascript
+
+// JSX version
+function Ratik() {
+  const firstName = "Ratik";
+  const lastName = "Sharma";
+  
+  return (
+    <Person
+      className='person'
+      age={33}
+      name={firstName + ' ' + lastName} />
+  );  
+}
+
+// Transpiled JS version
+function Ratik() {
+  const firstName = "Ratik";
+  const lastName = "Sharma";
+
+  return React.createElement(Person, {
+    age: 33,
+    name: firstName + ' ' + lastName,
+    className: 'person'
+  }, null);
+}
+
+```
+
+- When you’re trying to decide what to put in a JSX expression, ask yourself, "Could I pass this as a function argument?"
+- In React, data flows in _one way_ unlike the _two way_ data-binding in something like Angular. Hence, Props are _read-only_, and can only be passed _down_ to children.
+- One way to communicate between parent and child components is to pass a (callback) function to child components as props so they can call them when needed.
+
+```javascript
+
+function handleAction(event) {
+  console.log('Child did:', event);
+}
+
+function Parent() {
+  return (
+    <Child onAction={handleAction} />
+  );
+}
+
+```
+
+### Chapter 7: Example: Tweet with Props
+
+- When passing props, consider the following about the component:
+
+  1. Reusability of the component
+  2. How hard will it be to make changes to the component if our data changes
+
+- When an expression evaluates to `null` or `false` inside single braces within JSX, nothing is rendered at all.
+
+```javascript
+
+<div>
+  <span className="like-count">{count}</span>
+</div>
+
+// If `count` is null, the span will not get put into the DOM
+
+```
