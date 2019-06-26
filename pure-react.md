@@ -167,3 +167,34 @@ function Parent() {
 // If `count` is null, the span will not get put into the DOM
 
 ```
+
+### Chapter 8: PropTypes
+
+- React has a secret weapon called `PropTypes` which lets us put checks in place for the props that a component requires.
+- `PropTypes` allow us to check whether a prop is passed or not and also lets us do validation on the type of the prop that is passed.
+
+```javascript
+
+// A simple example
+import PropTypes from 'prop-types';
+
+function Comment({ author, commentMessage }) {
+  return (
+    <div>
+      <p>{author}</p>
+      <p>{commentMessage}</p>
+    </div>
+  )
+}
+
+Comment.propTypes = {
+  author: PropTypes.string.isRequired,
+  commentMessage: PropTypes.string.isRequired,
+}
+
+```
+
+- React provides a lot of ways to run validation on types. You can even write a custom validation function.
+- The _only_ catch with `PropTypes` is that we must rememeber to write them. React does not enforce using `PropTypes` by default. An easy way to make sure they aren't forgotten is to use a _linter_ rule.
+- `PropTypes` are a great way to document your code. When you come back to a component a few days, a week, or a month later, the `PropTypes` will serve as a "README" of sorts.
+- `PropTypes` are a powerful tool but they don't throw breaking errors. If a prop fails validation, React will still render things incorrectly. There _will_ be an error in the console though. So, it's good practice to keep the console open when developing React apps.
