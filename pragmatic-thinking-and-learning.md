@@ -90,7 +90,9 @@ By Andy Hunt
 ```plaintext
 Extra Note:
 
-CPU #1 is designed with an idle-loop routine as well. If it isn't processing anything, it simply generates an internal stream of verbal chatter. This is the little voice in our heads.
+CPU #1 is designed with an idle-loop routine as well. If it isn't processing anything,
+it simply generates an internal stream of verbal chatter. This is the little voice
+in our heads.
 
 ```
 
@@ -99,28 +101,6 @@ CPU #1 is designed with an idle-loop routine as well. If it isn't processing any
 - If we don't keep track of great ideas, we will stop noticing that we have them. The corollory is also true: once we start keeping track of ideas, _we get more of them_.
 
 - There’s no such thing as left brain and right brain; the various lobes of the brain and structures at different levels cooperate in a highly distributed fashion. But despite that cooperation, we still have these two different cognitive styles — CPU #1 and CPU #2.
-
-- L-mode characteristics:
-
-    1. Verbal
-    2. Analytic
-    3. Symbolic
-    4. Temporal
-    5. Abstract
-    6. Rational
-    7. Digital
-    8. Logical
-    9. Linear
-
-- R-mode characteristics:
-
-    1. Non-Verbal
-    2. Synthetic
-    3. Spatial
-    4. Concrete
-    5. **Intuitive**
-    6. Analogic
-    7. Holistic
 
 - Our culture has clear L-mode bias. It is true that L-mode thinking has differentiated humankind from common beasts but it has also caused us to become too reliant of L-mode thinking. We've lost touch with R-mode thinking – the kind of thinking that adds a little bit of intuitive magic in the way we think.
 
