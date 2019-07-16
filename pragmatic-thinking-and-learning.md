@@ -11,6 +11,10 @@ By Andy Hunt
 5. Keep practicing in order to remain expert.
 6. Avoid formal methods if you need creativity, intuition, or inventiveness.
 7. Learn the skill of learning.
+8. Capture all ideas to get more of them.
+9. Learn by synthesis as well as by analysis (ie. Learn by doing).
+10. Strive for good design; it really works better.
+11. Rewire your brain with belief and constant practice.
 
 ### Chapter 1: Introduction
 
@@ -68,3 +72,58 @@ By Andy Hunt
 #### Beware the Tool Trap
 
 - Don’t succumb to the false authority of a tool or a model. There is no substitute for thinking.
+
+### Chapter 3: This Is Your Brain
+
+- A useful analogy for the human brain is a dual-CPU, single-master bus design computer system.
+
+<img src="img/brain-design.png" alt="Schematic of a brain analogous to a computer system with 2 CPUs and a single-master bus." />
+
+- The two CPUs of the brain are:
+
+    1. CPU #1: von Neumann-style CPU for linear, logical thought and language processing. Processes instructions step-by-step, in order. CPU #1 is relatively slow. This linear-processing style of CPU #1 is called _linear_-mode or **L**-mode.
+
+    2. CPU #2: A kind of super regular-expression search engine, responsible for searching and pattern-matching. It can go off "thinking" of something and return back results at a later time asynchronously. CPU #2 style processing is called _rich_-mode or **R**-mode.
+
+- We need both the types of CPUs. **R**-mode is critical for intuition, problem solving, and creativity. **L**-mode gives us the power to work through the details and make it happen.
+
+```plaintext
+Extra Note:
+
+CPU #1 is designed with an idle-loop routine as well. If it isn't processing anything, it simply generates an internal stream of verbal chatter. This is the little voice in our heads.
+
+```
+
+- Due to the unpredictable nature of R-mode, answers and insights can pop up at any time. As a result, it is always good to be prepared with some method to jot down ideas – all the ideas!
+
+- If we don't keep track of great ideas, we will stop noticing that we have them. The corollory is also true: once we start keeping track of ideas, _we get more of them_.
+
+- There’s no such thing as left brain and right brain; the various lobes of the brain and structures at different levels cooperate in a highly distributed fashion. But despite that cooperation, we still have these two different cognitive styles — CPU #1 and CPU #2.
+
+- L-mode characteristics:
+
+    1. Verbal
+    2. Analytic
+    3. Symbolic
+    4. Temporal
+    5. Abstract
+    6. Rational
+    7. Digital
+    8. Logical
+    9. Linear
+
+- R-mode characteristics:
+
+    1. Non-Verbal
+    2. Synthetic
+    3. Spatial
+    4. Concrete
+    5. **Intuitive**
+    6. Analogic
+    7. Holistic
+
+- Our culture has clear L-mode bias. It is true that L-mode thinking has differentiated humankind from common beasts but it has also caused us to become too reliant of L-mode thinking. We've lost touch with R-mode thinking – the kind of thinking that adds a little bit of intuitive magic in the way we think.
+
+- Neuroplasticity ie. the plastic nature of brains make our brains re-wireable. The maximum amount we can learn, or the number of skills we attain, is not fixed. Just thinking that your brain has more capacity for learning makes it so.
+
+- On the flipside, the brain uses a "Use it or Lose it" policy wherein it dedicates more resources to whatever we do the most. This makes losing skills also a possibility. This is exactly why musicians practice scales incessantly, it's to do a refresh on their dynamic RAM.
