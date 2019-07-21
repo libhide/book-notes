@@ -15,6 +15,12 @@ By Andy Hunt
 9. Learn by synthesis as well as by analysis (ie. Learn by doing).
 10. Strive for good design; it really works better.
 11. Rewire your brain with belief and constant practice.
+12. Add sensory experience to engage more of your brain.
+13. Lead with R-mode; follow with L-mode.
+14. Use metaphor as the meeting place between L-mode and R-mode.
+15. Cultivate humor to build stronger metaphors.
+16. Step away from the keyboard to solve hard problems.
+17. Change your viewpoint to solve the problem.
 
 ### Chapter 1: Introduction
 
@@ -107,3 +113,26 @@ in our heads.
 - Neuroplasticity ie. the plastic nature of brains make our brains re-wireable. The maximum amount we can learn, or the number of skills we attain, is not fixed. Just thinking that your brain has more capacity for learning makes it so.
 
 - On the flipside, the brain uses a "Use it or Lose it" policy wherein it dedicates more resources to whatever we do the most. This makes losing skills also a possibility. This is exactly why musicians practice scales incessantly, it's to do a refresh on their dynamic RAM.
+
+### Chapter 4: Get in Your Right Mind
+
+- The simplest thing one can do to involve more of the brain in problem solving and creativity is to activate more neural pathways than ususal ie. expanding sensory involvement.
+
+- An example of involving more senses while problem solving is to fiddle with a paper clip or solve a tactile puzzle.
+
+- Other than involving other senses, another technique is using cross-sensory feedback. Write the problem down, draw a picture, describe it verbally etc.
+
+- Only using R-mode processing isn't the solution to our problem. By itself, R-mode cannot solve problems – it can even process language, after all. Instead the solution is to synchronise L-mode and R-mode processing.
+
+- What we should strive for is an R-mode to L-mode flow. We want R-mode to lead to acquire context, initial knowledge and then we want L-mode to "productize" things and help us get shit done.
+
+- Pair Programming is an excellent way to get the L-mode and R-mode to work together. Thinking in and using metaphors is another such way.
+
+- Two ways to harvest more out of R-mode:
+
+1. Image Streaming
+2. Free-form journaling
+
+- R-mode cannot be commanded, it can be invited. We almost have to defocus a bit to invite it. As soon as we become goal-oriented, L-mode sprints back up. Taking a walk in a labyrinth, engaging in mundane tasks like taking a shower are for this very reason a good way to invite R-mode.
+
+- Non-goal-directed playing with an idea to make connections, see relationships, and gain insights is another way to invite R-mode.
