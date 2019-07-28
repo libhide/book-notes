@@ -21,6 +21,13 @@ By Andy Hunt
 15. Cultivate humor to build stronger metaphors.
 16. Step away from the keyboard to solve hard problems.
 17. Change your viewpoint to solve the problem.
+18. Watch the outliers: "rarely" doesn't mean "never".
+19. Be comfortable with uncertainty.
+20. Trust ink over memory; every mental read is a write.
+21. Hedge your bets with diversity.
+22. Allow for different bugs in different people.
+23. Act like you’ve evolved: breathe, don’t hiss.
+24. Trust intuition, but verify.
 
 ### Chapter 1: Introduction
 
@@ -136,3 +143,48 @@ in our heads.
 - R-mode cannot be commanded, it can be invited. We almost have to defocus a bit to invite it. As soon as we become goal-oriented, L-mode sprints back up. Taking a walk in a labyrinth, engaging in mundane tasks like taking a shower are for this very reason a good way to invite R-mode.
 
 - Non-goal-directed playing with an idea to make connections, see relationships, and gain insights is another way to invite R-mode.
+
+### Chapter 5: Debug Your Mind
+
+- Humans minds, just like computer programs do have "bugs" in them – these are fundamental errors in how the mind processes information, makees decisions and evaluates situations.
+
+- Being aware of bugs in our minds is the first step to mitigating them. There are broadly four kind of bugs:
+
+    1. _Cognitive Biases_: How our thinking can be led astray
+    2. _Generational Affinity_: How our peers influence us
+    3. _Personality Tendencies_: How our personality influences our thoughts
+    4. _Hardware bugs_: How older portions of our brain can override the smarter portions
+
+- Our minds have a tendancy to reduce complex ideas to simple symbols (bias: symbolic reduction)
+
+- _Rarely_ doesn't mean _never_. Always take time to examine the "crazy" outliers or those "impossible", astronomically unlikely events. You never you what you may find.
+
+- Defer closure till the last moment. We often take decisions prematurely without having enough context. There will always be elements that are just plain uncertain, and that’s not a bad thing. Chip away at it, but don’t be in a rush to nail down details if it’s not ready yet. Be comfortable with the fact you don’t know.
+
+- Don't rely exclusively on memory. Memory is unreliable. Augmenting memory with notes in ink is crucial.
+
+- The biases we form change over time, and taken as a whole, the biases that drive any particular generation will be different from the biases that drive you and your peers. **We must recognise our generational affinity**.
+
+- Different generations inherently have different values, and our own attitudes and concerns change as we age as well.
+
+- We and our shared cohort (peers, folks we grow up with) are united by shared memories, common habits, and popular styles, as well as your age and station in life at that time.
+
+- Where we come from has a significant impact on our attitudes: whether we are a Risk Taker or Risk Averse, Individualistic or a Team Player, Family Oriented or Work Oriented etc.
+
+- In today's times, we have an interesting situation wherein people from various generations are all co-existing. As a result, it is important to know that not everyone shares our deep-seated values, and that doesn’t mean we’re right or they’re wrong.
+
+- The best way to keep from falling victim to our generation’s particular set of biases is to embrace diversity. If we and our team all think alike, we might see our reinforced collective viewpoint as the only viable one. It’s not. Just because we treasure our approach, our individualism, or oour teamwork doesn’t mean that younger or older folks will share that view or that it’s the right answer in this context.
+
+- Our own personality does affect our values and perceptions, in addition to oour generational affinities. This is the stuff we were born with – our own personal attitudinal context and temperament.
+
+- It’s fine if we happen to work a certain way, but it’s dangerous to think that everyone conforms to that same style of work. They don’t. They have their own styles and may well think ours is just as odd.
+
+- There are many ways to work out a solution and compromise. The only thing that is certain not to work is to try to change another person’s temperament to match our own. We should allow for different bugs in different people.
+
+- The human brain was not created all in one-shot, it's been built on and built up over time. There are older areas of the brain which are very dominant when it comes to decision making. These older areas are hardwired for more primitive, survival instinct behaviours ie. our fight-or-flight responses.
+
+- If we are around happy, upbeat people, it will tend to lift our mood. If we’re hanging out with depressed, pessimistic people who feel like losers, you will start to feel like a depressed, pessimistic loser as well. Attitudes, beliefs, behaviors, emotions – they are all contagious. Humans are natural mimics.
+
+- Intuition is a powerful too but our intuition can be dead wrong (see: all the notes above). Our perspective is skewed all the way from our personal values to understanding our place in the cosmos. In order to work around this we must make sure we lead with intuition, but follow up with provable, linear feedback.
+
+- Don't just trust your gut. Intuition is great but our intuition needs to be proven too. We should strive to use hard numbers, statisitics and measure to get prove what our gut is saying.
