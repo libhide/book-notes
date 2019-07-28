@@ -10,3 +10,5 @@
 - phosphene: the sensation of seeing light from some nonvisual source
 - labyrinth: a puzzle with only one path where no decisions need to be made. different from a maze.
 - lexicon: the vocabulary of a person, language, or branch of knowledge
+- perenious / pernicious: having a harmful effect, especially in a gradual or subtle way.
+- veneer: a thin decorative covering of fine wood applied to a coarser wood or other material.
