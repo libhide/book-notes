@@ -13,3 +13,5 @@
 - perenious / pernicious: having a harmful effect, especially in a gradual or subtle way.
 - veneer: a thin decorative covering of fine wood applied to a coarser wood or other material.
 - amortize: gradually write off the initial cost of (an asset) over a period.
+- colloquial: used in ordinary or familiar conversation; not formal or literary.
+- ossified: cease developing; stagnate.
