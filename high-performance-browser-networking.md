@@ -117,3 +117,50 @@ By Ilya Grigorik
   1. No bit is faster than one that is not sent; send fewer bits.
   2. We can’t make the bits travel faster, but we can move the bits closer.
   3. TCP connection reuse is critical to improve performance.
+
+### Chapter 3: Building Blocks of UDP
+
+- `UDP` came into picture much after `TCP/IP`, around the time `TCP` and `IP` were being separated.
+
+- The primary feature of `UDP` is not what _more_ it brings to the table, but what it chooses to omit.
+
+- `UDP` is also known as the _null protocol_.
+
+- The term `packet` applies to any formatted block of data, while the term `datagram` is often reserved for packets delivered via an unreliable service – no delivery guarantees, no failure notifications.
+
+- `UDP` originally stands for User Datagram Protocol but due to its unreliable nature, it's frequently also called Unreliable Datagram Protocol.
+
+- `DNS` or Domain Name System is an application of `UDP`.
+
+#### Null Protocol Services
+
+- The `IP` networking layer has the primary task of delivering datagrams from the source to the destination host based on their addresses. To do so, the messages are encapsulated within an IP packet which identifies the source and the destination addresses, as well as a number of other routing parameters.
+
+- `UDP` simply provides a layer of abstraction on top of `IP` by embedding the source and the target application ports of the communicating hosts.
+
+- `UDP`'s non-services (things it omits):
+
+  1. No guarantee of message delivery
+  2. No guarantee of order of delivery
+  3. No connection state tracking
+  4. No congestion control
+
+- `TCP` is a byte-stream oriented protocol capable of transmitting application messages spread across multiple packets without any explicit message boundaries within the packets themselves. `UDP` datagrams, on the other hand, have definitive boundaries: each datagram is carried in a single IP packet, and each application read yields the full message; datagrams cannot be fragmented.
+
+#### UDP and Network Address Translators
+
+- `IPv4` addresses are only 32 bits long, they provide a maximum of 4.29 billion unique IP addresses. While this is a big number on the surface, it isn't large enough to keep up with everyone trying to connect to the Internet. To solve this address depletion issue, the IP `Network Address Translator (NAT)` specification was introduced as an (interim) solution.
+
+- Each `NAT` is responsible for maintaining a table mapping of local IP and port tuples to one or more globally unique (public) IP and port tuples. The local IP address space behind the translator can then be reused among many different networks, thus solving the address depletion problem.
+
+- A big challenge with `UDP` is establishing connection, this is especially true for P2P applications, such as VoIP, games, and file sharing. The reason for this challenge is primarily the presence of `NAT`s and how difficult it can be to traverse them.
+
+- NAT Traversal is the process of providing the _right_ (public IP that is actually part of the `NAT`'s translation table) information to a `NAT` so it can route you correctly.
+
+- Popular NAT traversal techniques include `STUN`, `TURN` and `ICE`.
+
+- `STUN` or Session Traversal Utilities for NAT is a protocol where the client sends a request to a `STUN` server on the public network to find out its public IP address and port as seen from the public network. The downside for this protocol is that it is not sufficient to deal with all `NAT` topologies and network configurations. In some cases, `UDP` may be blocked altogether by a firewall or some other network appliance.
+
+- `TURN` or Traversal Using Relays around NAT is a protocol where the client sends a request to a public "relay" server which helps connect to the server. The obvious downside in this exchange is that it is no longer peer-to-peer! `TURN` also has a very high cost of operating.
+
+- `ICE` or Interactive Connectivity Establishment is a protocol, and a set of methods that seek to establish the most efficient tunnel between the participants - direct connection where possible, leveraging `STUN` negotiation where needed, and finally fallback to `TURN` if all else fails.
