@@ -48,6 +48,13 @@ By Ilya Grigorik
 
 ### Chapter 2: Building Blocks of TCP
 
+```plaintext
+Big Takeaway
+
+TCP handshake, Flow control, Slow-start, Congestion Avoidance
+
+```
+
 - At the heart of the Internet are two protocols: IP and TCP.
 
 - The IP, or Internet Protocol provides the host-to-host routing and addressing.
@@ -78,7 +85,7 @@ By Ilya Grigorik
 
 - While Flow Control helps manage congestion on the receiver's end, there are still measures needed to prevent either side from overwhelming the underlying network – Slow Start and Congestion Avoidance help here.
 
-#### Congestion Control / Slow Start
+#### Slow Start
 
 - Since neither the sender nor the receiver know the available bandwidth at the beginning of a new connection Slow Start and Congestion Avoidance help in estimating and adapting speeds to the continuously changing conditions within the network.
 
