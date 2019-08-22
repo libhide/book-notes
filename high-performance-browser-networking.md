@@ -164,3 +164,58 @@ By Ilya Grigorik
 - `TURN` or Traversal Using Relays around NAT is a protocol where the client sends a request to a public "relay" server which helps connect to the server. The obvious downside in this exchange is that it is no longer peer-to-peer! `TURN` also has a very high cost of operating.
 
 - `ICE` or Interactive Connectivity Establishment is a protocol, and a set of methods that seek to establish the most efficient tunnel between the participants - direct connection where possible, leveraging `STUN` negotiation where needed, and finally fallback to `TURN` if all else fails.
+
+### Chapter 4: Transport Layer Security (TLS)
+
+- What is SSL / TLS?
+- Diagram
+
+- TLS's services: Encryption, Auth, Integrity
+- TLS Handshake
+- TLS Handshake optimizations
+- MAC signing
+- Need for HTTPS
+- RSA, Deffie-Hellman
+
+- SNI
+
+- TLS Session resumption - remembering the client/server you have connected to previously
+  - drawback: session cache for each client has to be made
+
+- Session Tickets
+
+- Trust in TLS: public key crypto works but we still need to verify that the person we are communicating with is the right person ie. auth
+
+- Chain of Trust: transitive trust
+  - Certificate Authorities (CAs)
+
+- CRL, OCSP, OCSP Stapling
+
+
+- HSTS
+
+### Chapter 5: Introduction to Wireless Networks
+
+```plaintext
+Big Takeaway
+
+The performance of _any_ wireless network is fundamentally limited by one, the amount of allocated bandwidth and two, the signal-to-noise ratio between receiver and sender.
+
+```
+
+- Types of Wireless Networks: `PAN` (Bluetooth, NFC), `LAN` (WiFi), `MAN` (WiMAX), `WAN` (LTE)
+
+- Our next application may be delivered over a mobile network, but it may also rely on NFC for payments, Bluetooth for P2P communication via WebRTC, and WiFi for HD streaming. Clearly, we should not be picking, or betting on, just one wireless standard!
+
+- Channel capacity of a wireless network is its maximum information rate.
+
+- The performance of _any_ wireless network is fundamentally limited by one, the amount of allocated bandwidth and two, the signal-to-noise ratio between receiver and sender.
+
+- All radio-powered communication is:
+
+  - Done over a shared communication medium (radio waves)
+  - Regulated (by the govt.) to use specific bandwidth frequency ranges
+  - Regulated (by the govt.) to use specific transmit power rates
+  - Subject to continuously changing background noise and interference
+  - Subject to technical constraints of the chosen wireless technology
+  - Subject to constraints of the device: form factor, power, etc.
