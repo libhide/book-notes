@@ -30,7 +30,7 @@ By Ilya Grigorik
 
 - Last-Mile latency is ironically the biggest contributor to increasing latency rather than crossing oceans or continents.
 
-- To connect our home or office to the Internet, the local ISP needs to route the cables throughout the neighborhood, aggregate the signal, and forward it to a local routing node. All this in practice can alone take ~10 ms of work.
+- To connect our home or office to the Internet, the local ISP needs to route the cables throughout the neighbourhood, aggregate the signal, and forward it to a local routing node. All this in practice can alone take ~10 ms of work.
 
 - Optical fibers have a distinct advantage when it comes to bandwidth because each fiber can carry many different wavelengths (channels) of light through a process known as wavelength-division multiplexing (WDM).
 
@@ -61,7 +61,7 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
 
 - TCP, or Transmission Control Protocol is a *transport* protocol that provides the *abstraction* of a reliable network running over an unreliable channel, hiding most of the complexity of network communication from our applications: retransmission of lost data, in-order delivery, congestion control and avoidance, data integrity, and more.
 
-- The HTTP standard does not mandate TCP as the only transport protocol. A different protocol such as UDP can also be used with HTTP but due to the many great and convenient features TCP provides out of the box, all HTTP traffic on the Internet today is delivered via TCP. This is what makes understanding TCP important from a web optimization standpoint.
+- The HTTP standard does not mandate TCP as the only transport protocol. A different protocol such as UDP can also be used with HTTP but due to the many great and convenient features TCP provides out of the box, all HTTP traffic on the Internet today is delivered via TCP. This is what makes understanding TCP important from a web optimisation standpoint.
 
 - The reason we've heard of IPv4 and not IPv{1,2,3} is because before IPv4, IP and TCP were not separate entities. It was only in 1981 that the two protocols were separated.
 
@@ -71,11 +71,11 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
 
 <img src="img/threeway.png" alt="Diagram showing the three-way handshake" />
 
-- The delay imposed by the three-way handshake makes new TCP connections expensive to create, and is one of the big reasons why connection reuse is a critical optimization for any application running over TCP.
+- The delay imposed by the three-way handshake makes new TCP connections expensive to create, and is one of the big reasons why connection reuse is a critical optimisation for any application running over TCP.
 
 #### Congestion Avoidance and Control
 
-- Congestion Collapse is a recognized problem in complex networks. It occurs in a situation with asymmetric bandwidth capacity between network nodes. Congestion Collapse is a stable condition wherein if the algorithm for selecting packets to be dropped is fair, the network continues to operate, just in a degraded condition.
+- Congestion Collapse is a recognised problem in complex networks. It occurs in a situation with asymmetric bandwidth capacity between network nodes. Congestion Collapse is a stable condition wherein if the algorithm for selecting packets to be dropped is fair, the network continues to operate, just in a degraded condition.
 
 - To address the issue of Congestion Collapse, TCP has multiple mechanisms in place: flow control, congestion control (slow start), and congestion avoidance.
 
@@ -97,9 +97,9 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
 
 #### Congestion Avoidance
 
-- TCP as a system is designed to use packet loss as a feedback mechanism to help regulate it's performance.
+- TCP as a system is designed to use packet loss as a feedback mechanism to help regulate its performance.
 
-- Slow-start initializes a connection with a conservative window and, for every roundtrip, doubles the amount of data in flight until it exceeds the receiver’s flow-control window, a system-configured congestion threshold (ssthresh) window, or until a packet is lost. At this point the congestion avoidance algorithm takes over.
+- Slow-start initialises a connection with a conservative window and, for every roundtrip, doubles the amount of data in flight until it exceeds the receiver’s flow-control window, a system-configured congestion threshold (ssthresh) window, or until a packet is lost. At this point the congestion avoidance algorithm takes over.
 
 - In congestion avoidance, instead of exponentially increasing the speed on the network, the algorithm increases by speeds by 1 unit on each ACK. This is done until more packets are lost which then repeats the process of congestion avoidance (or control, depending on the size of the congestion window).
 
@@ -117,7 +117,7 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
 
 - The delay imposed by head-of-line blocking allows our applications to avoid having to deal with packet reordering and reassembly, which makes our application code much simpler. However, this is done at the cost of introducing unpredictable latency variation in the packet arrival times, commonly referred to as _jitter_, which can negatively impact the performance of the application.
 
-#### Tuning Application Behavior
+#### Tuning Application Behaviour
 
 - Tuning performance of TCP allows the server and client to deliver the best throughput and latency for an individual connection. However, how an application uses each new, or established, TCP connection can have an even greater impact:
 
@@ -127,7 +127,7 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
 
 ### Chapter 3: Building Blocks of UDP
 
-- `UDP` came into picture much after `TCP/IP`, around the time `TCP` and `IP` were being separated.
+- `UDP` came into picture much after `TCP/IP`, around the time when `TCP` and `IP` were being separated.
 
 - The primary feature of `UDP` is not what _more_ it brings to the table, but what it chooses to omit.
 
@@ -192,7 +192,7 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
   2. Authentication is guaranteed based on a chain of trust among clients and servers (more about this below)
   3. Integrity is ensured using a checksum-like technique
 
-- TLS connections require two roundtrips for a "full handshake" which is bad thing. In practice, optimized deployments can do much better and deliver a consistent 1-RTT TLS handshake. This is acheived using two techniques:
+- TLS connections require two roundtrips for a "full handshake" which is bad thing. In practice, optimised deployments can do much better and deliver a consistent 1-RTT TLS handshake. This is achieved using two techniques:
 
   1. `False Start`: TLS protocol extension that allows the client and server to start transmitting encrypted application data when the handshake is only partially complete
   2. If the client has previously communicated with the server, an "abbreviated handshake" can be used
