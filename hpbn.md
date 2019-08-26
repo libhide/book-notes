@@ -174,32 +174,45 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
 
 ### Chapter 4: Transport Layer Security (TLS)
 
-- What is SSL / TLS?
-- Diagram
+- `SSL` was a protocol developed by `Netscape` to ensure safety of user's data for e-commerce platforms on the web. It was a protocol built on top of `TCP` within the application layer of the Network stack.
 
-- TLS's services: Encryption, Auth, Integrity
-- TLS Handshake
-- TLS Handshake optimizations
-- MAC signing
-- Need for HTTPS
-- RSA, Deffie-Hellman
+<img src="img/ssl.png" />
 
-- SNI
+- The `SSL` protocol was standardised by the `IETF`, it was renamed to `Transport Layer Security (TLS)`.
 
-- TLS Session resumption - remembering the client/server you have connected to previously
-  - drawback: session cache for each client has to be made
+- `TLS` is designed to provide three essential services to all applications running above it: encryption, authentication, and data integrity.
 
-- Session Tickets
+- In order to establish a cryptographically secure data channel, the connection peers partake in a `TSL` handshake.
 
-- Trust in TLS: public key crypto works but we still need to verify that the person we are communicating with is the right person ie. auth
+<img src="img/tls-handshake.png" />
 
-- Chain of Trust: transitive trust
-  - Certificate Authorities (CAs)
+- During the `TLS` handshake:
 
-- CRL, OCSP, OCSP Stapling
+  1. Encryption comes as a result of using cryptography (`RSA` or `Diffie-Hellman`)
+  2. Authentication is guaranteed based on a chain of trust among clients and servers (more about this below)
+  3. Integrity is ensured using a checksum-like technique
 
+- TLS connections require two roundtrips for a "full handshake" which is bad thing. In practice, optimized deployments can do much better and deliver a consistent 1-RTT TLS handshake. This is acheived using two techniques:
 
-- HSTS
+  1. `False Start`: TLS protocol extension that allows the client and server to start transmitting encrypted application data when the handshake is only partially complete
+  2. If the client has previously communicated with the server, an "abbreviated handshake" can be used
+
+- RSA, Diffie-Hellman and Forward Secrecy:
+
+  - [Diffie-Hellman](https://www.youtube.com/watch?v=NmM9HA2MQGI)
+  - [Issues with RSA & Forward Secrecy](https://www.youtube.com/watch?v=vsXMMT2CqqE)
+
+- The popularity of `HTTP` has created a vibrant ecosystem of various proxies and intermediaries on the Web: cache servers, content filters etc. and as a result _secure_ communication over `HTTP` is really difficult. This is why `HTTPS` is slowly becoming a requirement everywhere. `HTTPS` provides a secure tunnel for connection peers to talk over.
+
+- `Session Identifiers` are one way to perform an abbreviated `TLS` handshake. In this mechanism, clients can send a session ID to a server they have talked to in the past to re-establish a connection in 1-RTT. The practical limitation of this mechanism is the requirement for the server to create and maintain a session cache for every client.
+
+- `Sessions Tickets` are another way to perform an abbreviated `TLS` handshake. In this approach, the server sends a session ticket to the client protected by its private key which the client can decrypt and use to establish a connection with the server for subsequent connections. Thus, all session data is stored only on the client, but the ticket is still safe because it is encrypted with a key known only by the server.
+
+- Authentication on the Web follows the principle of a `Chain of Trust`. If Alice, Bob and Charlie are three friends then their chain of trust would look something like this: Alice trusts Bob, Bob trusts Charlie, and by transitive trust, Alice decides to trust Charlie. As long as nobody in the chain is compromised, the chain is allowed to build and grow its list of trusted parties.
+
+- In practice, browsers establish a chain of trust with Certificate Authorities (CA). A CA is a trusted third party that is trusted by both the subject (owner) of the certificate and the party relying upon the certificate.
+
+- Our browsers specify which CAs to trust (root CAs), and the burden is then on the CAs to verify each site they sign, and to audit and verify that these certificates are not misused or compromised. If the security of any site with the CA’s certificate is breached, then it is also the responsibility of that CA to revoke the compromised certificate.
 
 ### Chapter 5: Introduction to Wireless Networks
 
