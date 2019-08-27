@@ -239,3 +239,48 @@ The performance of _any_ wireless network is fundamentally limited by one, the a
   - Subject to continuously changing background noise and interference
   - Subject to technical constraints of the chosen wireless technology
   - Subject to constraints of the device: form factor, power, etc.
+
+### Chapter 6: WiFi
+
+- `WiFi` is trivial to deploy by anyone, anywhere; and the required hardware for it is simple and cheap.
+
+- Most `Ethernet` and `WiFi` protocols schedule all communication ie. they treat the shared medium, regardless of whether it is a wire or the radio waves, as a "random access channel". This means that there is no central process, or scheduler, that controls who or which device is allowed to transmit data at any point in time. Instead, each device decides on its own.
+
+- Communication scheduling happens using two important protocols: `CSMA` and `CSMA/CD`.
+
+	- `CSMA` is a "listen before you speak" algorithm which checks whether anyone else is transmitting and if the channel is free, it transmits the data, else it listens until free.
+	- `CSMA/CD` is a collision detection algorithm. If a collision is detected, both parties stop transmitting immediately and sleep for a random interval (with exponential backoff). 
+
+-  `WiFi` specifically using a collision avoidance algorithm (`CSMA/CA`) rather than `CSMA/CD`. Here, each sender attempts to avoid collisions by transmitting only when the channel is sensed to be idle.
+
+- Based on some probabilistic math, channel load below 10% to get good channel utilisation (minimise number of collisions).
+
+- "b", "g" `WiFi` standards utilise 2.4GHz bands while "n" and "ac" standard utilise 5GHz bands.
+
+- Since `WiFi` does not provide any bandwidth or latency guarantees, our application must be vary of the connection it is working over. An example of this in practice can be seen in Adaptive Bitrate Streaming.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
