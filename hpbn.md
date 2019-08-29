@@ -217,9 +217,11 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
 ### Chapter 5: Introduction to Wireless Networks
 
 ```plaintext
-Big Takeaway
+Big Takeaway:
 
-The performance of _any_ wireless network is fundamentally limited by one, the amount of allocated bandwidth and two, the signal-to-noise ratio between receiver and sender.
+The performance of _any_ wireless network is fundamentally
+limited by one, the amount of allocated bandwidth and two,
+the signal-to-noise ratio between receiver and sender.
 
 ```
 
@@ -259,28 +261,23 @@ The performance of _any_ wireless network is fundamentally limited by one, the a
 
 - Since `WiFi` does not provide any bandwidth or latency guarantees, our application must be vary of the connection it is working over. An example of this in practice can be seen in Adaptive Bitrate Streaming.
 
+### Chapter 10: Primer on Web Performance
 
+- Historically, Page-Load-Time has been the de facto way to measure web performance. But, it's too simplistic a metric to evalute modern web applications.
 
+- Presently, the success of a performance and optimization strategy is directly correlated to the ability to define and iterate on application-specific benchmarks and criteria. Nothing beats application-specific knowledge and measurements, especially when linked to bottom-line goals and metrics of your business.
 
+- Majority of time while loading web applications is spent in DNS resolution, TCP connection handshake, TLS negotiation (if required) etc. and not on the content download portion of a request.
 
+- More bandwidth doesn't matter, _much_. Access to higher bandwidth data rates is always good, especially for cases that involve bulk data transfers: video and audio streaming. However, when it comes to everyday web browsing, which requires fetching hundreds of relatively small resources from dozens of different hosts, roundtrip latency is the limiting factor.
 
+<img src="img/latency-and-bandwidth.png" />
 
+- Tools like the Network, User and Resource Timing APIs can be very helpful in doing Real-User performance testing for applications. These APIs are exposed by most modern browsers.
 
+- A modern web browser is much more than a simple network socket manager. It does a lot of web optimisation out of the box:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  - Resource pre-fetching and prioritization
+  - DNS pre-resolve
+  - TCP pre-connect
+  - Page pre-rendering
