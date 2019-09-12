@@ -59,7 +59,7 @@ TCP handshake, Flow control, Slow-start, Congestion Avoidance
 
 - The IP, or Internet Protocol provides the host-to-host routing and addressing.
 
-- TCP, or Transmission Control Protocol is a *transport* protocol that provides the *abstraction* of a reliable network running over an unreliable channel, hiding most of the complexity of network communication from our applications: retransmission of lost data, in-order delivery, congestion control and avoidance, data integrity, and more.
+- TCP, or Transmission Control Protocol is a _transport_ protocol that provides the _abstraction_ of a reliable network running over an unreliable channel, hiding most of the complexity of network communication from our applications: retransmission of lost data, in-order delivery, congestion control and avoidance, data integrity, and more.
 
 - The HTTP standard does not mandate TCP as the only transport protocol. A different protocol such as UDP can also be used with HTTP but due to the many great and convenient features TCP provides out of the box, all HTTP traffic on the Internet today is delivered via TCP. This is what makes understanding TCP important from a web optimisation standpoint.
 
@@ -250,10 +250,11 @@ the signal-to-noise ratio between receiver and sender.
 
 - Communication scheduling happens using two important protocols: `CSMA` and `CSMA/CD`.
 
-	- `CSMA` is a "listen before you speak" algorithm which checks whether anyone else is transmitting and if the channel is free, it transmits the data, else it listens until free.
-	- `CSMA/CD` is a collision detection algorithm. If a collision is detected, both parties stop transmitting immediately and sleep for a random interval (with exponential backoff). 
+  - `CSMA` is a "listen before you speak" algorithm which checks whether anyone else is transmitting and if the channel is free, it transmits the data, else it listens until free.
 
--  `WiFi` specifically using a collision avoidance algorithm (`CSMA/CA`) rather than `CSMA/CD`. Here, each sender attempts to avoid collisions by transmitting only when the channel is sensed to be idle.
+  - `CSMA/CD` is a collision detection algorithm. If a collision is detected, both parties stop transmitting immediately and sleep for a random interval (with exponential backoff).
+
+- `WiFi` specifically using a collision avoidance algorithm (`CSMA/CA`) rather than `CSMA/CD`. Here, each sender attempts to avoid collisions by transmitting only when the channel is sensed to be idle.
 
 - Based on some probabilistic math, channel load below 10% to get good channel utilisation (minimise number of collisions).
 
@@ -281,3 +282,29 @@ the signal-to-noise ratio between receiver and sender.
   - DNS pre-resolve
   - TCP pre-connect
   - Page pre-rendering
+
+#### Chapter 11: HTTP/1.X
+
+- Improving performance of HTTP was one the key design goals for the `HTTP/1.1`.
+
+- The entire web optimisation game is about reducing RTTs which in turn speed up load times.
+
+- `HTTP/1.1` offers various strategies for optimization:
+
+  - `Keep-Alive` Header - helps keep a TCP connection alive till explictly told to turn off by the use of another header
+  - `HTTP Pipelining` - allows requests to be sent in parallel to the server. eg. requesting an `HTML` and `CSS` file together. The downside is that servers in `HTTP/1.1` don't support multiplexing (sending responses in parallel) due to the strict order of delivery imposition. As a result, `HTTP Pipelining` adoption has remained low.
+  - Browsers are capable of creating multiple TCP connections (6 at most). This in a way is like multiplexing but it doesn't reach the same levels of performance as it.
+  - `Domain Sharding` is a technique where we can manually split a website's resources across a lot of subdomains or "shards" and then request for them via the browsers. This enforces the browser to use multiple TCP connections in turn making loads faster. Although effective in moderation, `Domain Sharding` is overused and that causes tens of underutilized TCP streams, many of them never escaping TCP slow-start.
+  - There are instances where request and response header sizes exceed the size of the resource being fetched. Such situations should be avoided.
+  - Resource `Concatenation` is a technique where multiple `JS` and `CSS` files are combined to form `JS` and `CSS` bundles which are then fetched by websites. This helps reduce multiple requests to the server. The downside to this is that even small changes in the `JS` and `CSS` for a website requires a re-fetch of these bundles files.
+  - Image `Spriting` is another way to cut down on multiple requests to a server. In this technique, images on a website are combined to form a large sprite sheet. The spirte sheet is fetched by the website and then displayed by chopping up using additional application-level CSS.
+  - `Resource inlining` is a technique which allows us to inline small assets into our `HTML`. This is usually done for static resources ie. images that won't change frequently. This is an effective technique when we have images to display that are so small (1-2 KB) that fetching them over `HTTP` would be detrimental to performance.
+
+```HTML
+<!-- Resource Inlining -->
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="
+     alt="1x1 transparent (GIF) pixel"
+/>
+```
+
+- Finding the right balance among all of these optimizations is an imperfect science.
